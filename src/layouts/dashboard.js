@@ -90,7 +90,7 @@ const Dashboard = () => {
     <Flex
       width={"100%"}
       minHeight="100vh"
-      direction={{ base: "column", md: "row" }}
+      direction={{ base: "column", lg: "row" }}
     >
       <Box
         width="20%"
@@ -99,17 +99,17 @@ const Dashboard = () => {
         left="0"
         top="0"
         height="100vh"
-        display={{ base: "none", md: "inline" }}
+        display={{ base: "none", lg: "inline" }}
       >
         <Sidebar />
       </Box>
-      <Box width={{ base: "100%", md: "80%" }} boxSizing="border-box">
+      <Box width={{ base: "100%", lg: "80%" }} boxSizing="border-box">
         <Outlet />
       </Box>
       <Flex
         position="fixed"
         bottom="0"
-        display={{ base: "inline-flex", md: "none" }}
+        display={{ base: "inline-flex", lg: "none" }}
         width="100%"
         px="20px"
         py="12px"

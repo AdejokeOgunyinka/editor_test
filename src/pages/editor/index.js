@@ -32,20 +32,20 @@ const Editor = () => {
   return (
     <Flex width="100%" height="100%" boxSizing="border-box">
       <Flex
-        width={{ base: "100%", md: "60%" }}
+        width={{ base: "100%", lg: "60%" }}
         boxSizing="border-box"
         direction="column"
         justify="space-between"
-        height={{ base: "90vh", md: "unset" }}
+        height={{ base: "90vh", lg: "unset" }}
       >
         <Box>
           <Flex
             justify="space-between"
-            px={{ base: "20px", md: "24px" }}
+            px={{ base: "20px", lg: "24px" }}
             pb={{ md: "14px" }}
-            pt={{ base: "12px", md: "unset" }}
+            pt={{ base: "12px", lg: "unset" }}
             align="center"
-            mb={{ base: "26px", md: "41px" }}
+            mb={{ base: "26px", lg: "41px" }}
           >
             <Flex align="center">
               <Avatar alt="avatar" src={AvatarImage} boxSize="32px" />
@@ -68,10 +68,10 @@ const Editor = () => {
               Publish
             </Button>
           </Flex>
-          <Box px={{ base: "20px", md: "60px" }} width="100%">
+          <Box px={{ base: "20px", lg: "60px" }} width="100%">
             <Flex
               direction="column"
-              height={{ base: "382px", md: "444px" }}
+              height={{ base: "382px", lg: "444px" }}
               border="1px solid #E5E8F0"
               borderRadius="12px"
               position="relative"
@@ -81,39 +81,39 @@ const Editor = () => {
               <Image
                 alt="hot air balloon"
                 src={HotAirBalloon}
-                height={{ base: "119px", md: "175px" }}
+                height={{ base: "119px", lg: "175px" }}
                 width="100%"
                 borderTopRadius="inherit"
               />
               <Box
                 width="100%"
                 position="absolute"
-                px={{ base: "16px", md: "24px" }}
-                top={{ base: "56px", md: "90px" }}
+                px={{ base: "16px", lg: "24px" }}
+                top={{ base: "56px", lg: "90px" }}
               >
                 <Flex
                   bg="#fff"
-                  height={{ base: "326px", md: "264px" }}
+                  height={{ base: "326px", lg: "264px" }}
                   width="100%"
-                  borderRadius={{ base: "8px", md: "24px" }}
-                  p={{ base: "16px", md: "24px" }}
-                  direction={{ base: "column", md: "row" }}
+                  borderRadius={{ base: "8px", lg: "24px" }}
+                  p={{ base: "16px", lg: "24px" }}
+                  direction={{ base: "column", lg: "row" }}
                 >
                   <Flex
                     justify="space-between"
                     align="center"
-                    mb={{ base: "16px", md: "unset" }}
+                    mb={{ base: "16px", lg: "unset" }}
                   >
                     <Avatar
                       src={AvatarImage}
                       alt="avatar"
-                      boxSize={{ base: "74px", md: "82px" }}
+                      boxSize={{ base: "74px", lg: "82px" }}
                     />
-                    <Box display={{ md: "none" }}>
+                    <Box display={{ lg: "none" }}>
                       <EditorButton>Edit Profile</EditorButton>
                     </Box>
                   </Flex>
-                  <Box ml={{ md: "18px" }}>
+                  <Box ml={{ lg: "18px" }}>
                     <Heading
                       fontSize="24px"
                       lineHeight="32px"
@@ -125,15 +125,15 @@ const Editor = () => {
                     <Text
                       fontSize="14px"
                       lineHeight="22px"
-                      mt={{ base: "12px", md: "16px" }}
-                      mb={{ base: "16px", md: "14px" }}
+                      mt={{ base: "12px", lg: "16px" }}
+                      mb={{ base: "16px", lg: "14px" }}
                     >
                       Personal Trainer 💪 Dancer 💃 Meditator. I love all
                       animals 🐶 and donate a percentage of my income to marine
                       life 🐠
                     </Text>
                     <SocialMedia />
-                    <HStack mt={{ base: "16px", md: "24px" }} spacing="8px">
+                    <HStack mt={{ base: "16px", lg: "24px" }} spacing="8px">
                       {tags.map((tag, index) => (
                         <Tag
                           key={index}
@@ -148,7 +148,7 @@ const Editor = () => {
                     <Flex
                       width="100%"
                       ml="50px"
-                      display={{ base: "none", md: "inline" }}
+                      display={{ base: "none", lg: "inline" }}
                     >
                       <EditorButton marginTop="32px">Edit Profile</EditorButton>
                     </Flex>
@@ -162,7 +162,7 @@ const Editor = () => {
           align="center"
           justify="center"
           pb="48px"
-          display={{ base: "none", md: "inline" }}
+          display={{ base: "none", lg: "inline" }}
         >
           <Flex {...controlStyles}>
             {controls.map((control, index) => (
@@ -186,7 +186,7 @@ const Editor = () => {
         </Flex>
         <Flex //mobile controls
           width="100%"
-          display={{ base: "inline-flex", md: "none" }}
+          display={{ base: "inline-flex", lg: "none" }}
           justify="flex-end"
           columnGap="12px"
           pr="20px"
@@ -212,7 +212,7 @@ const Editor = () => {
       <Box
         width="40%"
         borderLeft="1px solid #E5E8F0"
-        display={{ base: "none", md: "inline" }}
+        display={{ base: "none", lg: "inline" }}
       >
         <EditorInfoSection />
       </Box>
