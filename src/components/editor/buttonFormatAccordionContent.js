@@ -9,18 +9,24 @@ const ButtonFormatAccordionContent = () => {
 
   return (
     <Flex width="100%" direction="column">
-      <Flex width="100%" wrap="wrap" rowGap="8px" columnGap="8px">
+      <Flex
+        width="100%"
+        wrap="wrap"
+        rowGap="8px"
+        columnGap={{ base: "7px", md: "8px" }}
+      >
         {buttonFormats.map((buttonFormat, index) => (
           <Flex
             direction="column"
-            height="98px"
+            width={{ base: "93px", md: "unset" }}
+            height={{ base: "93px", md: "98px" }}
             justify="center"
             align="center"
             cursor="pointer"
             bg={buttonFormatIndex === index + 1 ? "#FFEEE7" : "unset"}
             border={
               buttonFormatIndex === index + 1
-                ? "1px solid #AA3802"
+                ? "1px solid #FFAA81"
                 : "1px solid #E5E8F0"
             }
             borderRadius="8px"
@@ -30,6 +36,9 @@ const ButtonFormatAccordionContent = () => {
           >
             <Button
               {...buttonFormat}
+              width="61px"
+              height="30px"
+              fontSize="12px"
               bg={
                 (index + 1) % 2 !== 0 && buttonFormatIndex === index + 1
                   ? "#AA3802"

@@ -3,26 +3,20 @@ import { Box, Flex, Image, Text, Avatar } from "@chakra-ui/react";
 import AvatarImage from "../assets/avatar.png";
 import MainstackLogo from "../assets/mainstack_logo.svg";
 import ThreeDotsImage from "../assets/3_dots.svg";
-import { menu1, menu2, menu3 } from "../utils/dashboardLayoutUtils"; //sidebar items (with image & text)
+import {
+  menu1,
+  menu2,
+  menu3,
+  mobileMenu,
+  sidebarItemTextStyles,
+  sidebarItemStyles,
+  mobileSideBarItemStyes,
+  mobileSideBarItemTextStyles,
+} from "../utils/dashboardLayoutUtils"; //sidebar items (with image & text)
 import { NavLink, Outlet } from "react-router-dom";
 import "./dashboard.scss";
 
 const SidebarItem = ({ icon, label, to }) => {
-  const sidebarItemTextStyles = {
-    marginLeft: "12px",
-    fontSize: "16psx",
-    color: "#4D5760",
-    fontWeight: "600",
-  };
-
-  const sidebarItemStyles = {
-    width: "100%",
-    paddingLeft: "60px",
-    display: "flex",
-    alignItems: "center",
-    marginBottom: "24px",
-  };
-
   return (
     <NavLink
       to={to}
@@ -93,7 +87,11 @@ const Sidebar = () => {
 
 const Dashboard = () => {
   return (
-    <Flex width={"100%"} minHeight="100vh">
+    <Flex
+      width={"100%"}
+      minHeight="100vh"
+      direction={{ base: "column", md: "row" }}
+    >
       <Box
         width="20%"
         borderRight="1px solid #E5E8F0"
@@ -108,6 +106,34 @@ const Dashboard = () => {
       <Box width={{ base: "100%", md: "80%" }} boxSizing="border-box">
         <Outlet />
       </Box>
+      <Flex
+        position="fixed"
+        bottom="0"
+        display={{ base: "inline-flex", md: "none" }}
+        width="100%"
+        px="20px"
+        py="12px"
+        borderTop="1px solid #E5E8F0"
+        zIndex={1}
+        bg="#fff"
+      >
+        {mobileMenu.map((menu, index) => (
+          <NavLink
+            to={menu.to}
+            style={mobileSideBarItemStyes}
+            className={({ isActive }) =>
+              isActive ? "activeMobileMenu" : undefined
+            }
+          >
+            <Flex direction="column" align="center" key={index}>
+              {menu.icon}
+              <Text {...mobileSideBarItemTextStyles} className="activeNavText">
+                {menu.name}
+              </Text>
+            </Flex>
+          </NavLink>
+        ))}
+      </Flex>
     </Flex>
   );
 };

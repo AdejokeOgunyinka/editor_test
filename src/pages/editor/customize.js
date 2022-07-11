@@ -74,7 +74,11 @@ const Customization = () => {
               <Text {...sectionHeaderStyles}>Dark Mode</Text>
               <Switch size="sm" colorScheme="orange" />
             </Flex>
-            <Accordion allowToggle width="100%">
+            <Accordion
+              allowToggle
+              width="100%"
+              mb={{ base: "80px", md: "unset" }}
+            >
               {accordionHeaders.map((accordionHeader, index) => (
                 <AccordionItem {...sectionStyles} key={index}>
                   <AccordionButton

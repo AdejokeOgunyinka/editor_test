@@ -36,6 +36,7 @@ const Editor = () => {
         boxSizing="border-box"
         direction="column"
         justify="space-between"
+        height={{ base: "90vh", md: "unset" }}
       >
         <Box>
           <Flex
@@ -157,7 +158,7 @@ const Editor = () => {
             </Flex>
           </Box>
         </Box>
-        <Flex
+        <Flex // desktop controls
           align="center"
           justify="center"
           pb="48px"
@@ -183,7 +184,7 @@ const Editor = () => {
             ))}
           </Flex>
         </Flex>
-        <Flex
+        <Flex //mobile controls
           width="100%"
           display={{ base: "inline-flex", md: "none" }}
           justify="flex-end"

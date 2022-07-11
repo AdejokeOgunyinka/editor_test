@@ -9,7 +9,7 @@ const TextAccordionContent = () => {
 
   return (
     <Flex width="100%" direction="column">
-      <Flex width="100%" wrap="wrap" rowGap="8px" justify="space-between">
+      <Flex width="100%" wrap="wrap" rowGap="8px" columnGap="8px">
         {textTypes.map((textType, index) => (
           <Flex
             direction="column"
@@ -21,7 +21,7 @@ const TextAccordionContent = () => {
             bg={textTypeIndex === index + 1 ? "#FFEEE7" : "unset"}
             border={
               textTypeIndex === index + 1
-                ? "1px solid #AA3802"
+                ? "1px solid #FF5403"
                 : "1px solid #E5E8F0"
             }
             borderRadius="8px"
