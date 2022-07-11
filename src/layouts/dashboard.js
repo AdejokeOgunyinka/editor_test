@@ -101,10 +101,11 @@ const Dashboard = () => {
         left="0"
         top="0"
         height="100vh"
+        display={{ base: "none", md: "inline" }}
       >
         <Sidebar />
       </Box>
-      <Box width="80%" boxSizing="border-box">
+      <Box width={{ base: "100%", md: "80%" }} boxSizing="border-box">
         <Outlet />
       </Box>
     </Flex>

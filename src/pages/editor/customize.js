@@ -27,7 +27,11 @@ const Customization = () => {
   const history = useNavigate();
   return (
     <Flex width="100%" height="100%" boxSizing="border-box">
-      <Box width="60%" boxSizing="border-box" px="24px">
+      <Box
+        width={{ base: "100%", md: "60%" }}
+        boxSizing="border-box"
+        px={{ base: "20px", md: "24px" }}
+      >
         <Flex
           justify="space-between"
           pt="14px"
@@ -65,7 +69,7 @@ const Customization = () => {
             {" "}
             Customize your font, button color, text color to your choice
           </Text>
-          <Box width="100%" px="60px">
+          <Box width="100%" px={{ md: "60px" }}>
             <Flex width="100%" {...sectionStyles}>
               <Text {...sectionHeaderStyles}>Dark Mode</Text>
               <Switch size="sm" colorScheme="orange" />
@@ -94,7 +98,11 @@ const Customization = () => {
           </Box>
         </Box>
       </Box>
-      <Box width="40%" borderLeft="1px solid #E5E8F0">
+      <Box
+        width="40%"
+        borderLeft="1px solid #E5E8F0"
+        display={{ base: "none", md: "inline" }}
+      >
         <EditorInfoSection />
       </Box>
     </Flex>
