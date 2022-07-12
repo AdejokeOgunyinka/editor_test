@@ -124,8 +124,9 @@ const Dashboard = () => {
             className={({ isActive }) =>
               isActive ? "activeMobileMenu" : undefined
             }
+            key={index}
           >
-            <Flex direction="column" align="center" key={index}>
+            <Flex direction="column" align="center">
               {menu.icon}
               <Text {...mobileSideBarItemTextStyles} className="activeNavText">
                 {menu.name}

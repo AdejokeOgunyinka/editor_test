@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@chakra-ui/react";
 
-const EditorButton = ({ children, marginTop }) => {
+const EditorButton = ({ children, marginTop, onClick }) => {
   return (
     <Button
       bg="inherit !important"
@@ -12,6 +12,7 @@ const EditorButton = ({ children, marginTop }) => {
       fontSize="15px"
       mt={marginTop}
       _hover={{ bg: "#E5E8F0 !important" }}
+      onClick={onClick}
     >
       {children}
     </Button>

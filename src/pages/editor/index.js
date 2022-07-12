@@ -9,6 +9,7 @@ import {
   Image,
   Tag,
   HStack,
+  useDisclosure,
 } from "@chakra-ui/react";
 import EditorInfoSection from "../../components/editor/editorInfoSection";
 import AvatarImage from "../../assets/avatar.png";
@@ -19,18 +20,23 @@ import { tags, controlStyles, controls } from "../../utils/editor";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../utils/routeUtils";
 import "./styles.scss";
+import AddLinkDrawer from "../../components/editor/addLinkDrawer";
 
 const Editor = () => {
   const history = useNavigate();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleControlClick = (index) => {
     if (index === 1) {
       history(ROUTES.customization);
-    } else {
+    } else if (index === 2) {
+      onOpen();
     }
   };
+
   return (
     <Flex width="100%" height="100%" boxSizing="border-box">
+      <AddLinkDrawer onClose={onClose} isOpen={isOpen} />
       <Flex
         width={{ base: "100%", lg: "60%" }}
         boxSizing="border-box"
@@ -171,11 +177,11 @@ const Editor = () => {
                 width="50%"
                 height="100%"
                 className="controlContainer"
-                key={index}
                 justify="center"
                 align="center"
                 cursor="pointer"
                 onClick={() => handleControlClick(index + 1)}
+                key={index}
               >
                 <Image alt="control image" src={control.icon} boxSize="24px" />
                 <Text color="#fff" ml="11px" fontSize="15px" fontWeight="600">
