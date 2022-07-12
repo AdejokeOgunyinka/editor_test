@@ -9,3 +9,4 @@ export { default as TribeIcon } from "./tribe.svg.react";
 export { default as VirtualCardIcon } from "./virtualCard.svg.react";
 export { default as ThreeDotsIcon } from "./threeDots.svg.react";
 export { default as SearchIcon } from "./searchIcon.svg.react";
+export { default as ArrowUpSlantIcon } from "./arrowUpSlant.svg.react";

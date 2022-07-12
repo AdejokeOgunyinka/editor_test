@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import {
   Drawer,
   DrawerOverlay,
@@ -14,11 +14,9 @@ import { ArrowBackIcon, AddIcon } from "@chakra-ui/icons";
 import AddLinksAccordion from "./addLinksAccordion";
 import { Formik, FieldArray, Form } from "formik";
 import * as Yup from "yup";
+import { LinkDrawerContext } from "../../contexts/linkDrawer";
 
 const AddLinksDrawer = ({ onClose, isOpen }) => {
-  //eslint-disable-next-line
-  const [header, setHeader] = useState("Links");
-
   const initialValues = {
     links: [{ title: "", link: "" }],
   };
@@ -34,8 +32,11 @@ const AddLinksDrawer = ({ onClose, isOpen }) => {
       .required(),
   });
 
+  const { setLinkObjectArray } = useContext(LinkDrawerContext);
+
   const onSubmit = (values) => {
-    // console.log({ values });
+    setLinkObjectArray(values);
+    onClose();
   };
 
   return (

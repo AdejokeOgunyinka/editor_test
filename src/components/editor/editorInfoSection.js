@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Flex,
   Box,
@@ -7,13 +7,19 @@ import {
   Avatar,
   Text,
   Heading,
+  Button,
+  Link,
 } from "@chakra-ui/react";
 import HotAirBalloon from "../../assets/Hot_air_balloon.png";
 import AvatarImage from "../../assets/avatar.png";
 import SocialMedia from "./socialMedia";
 import EditorButton from "./button";
+import { LinkDrawerContext } from "../../contexts/linkDrawer";
+import { ArrowUpSlantIcon } from "../../assets/svgs";
 
 const EditorInfoSection = (props) => {
+  const { linkObjectArray } = useContext(LinkDrawerContext);
+
   return (
     <Flex
       width="100%"
@@ -33,7 +39,7 @@ const EditorInfoSection = (props) => {
         height="85%"
         borderRadius="24px"
       >
-        <VStack textAlign="center">
+        <VStack textAlign="center" overflowY="scroll">
           <Flex direction="column" alignItems="center" position="relative">
             <Image
               alt="hot air balloon"
@@ -59,6 +65,27 @@ const EditorInfoSection = (props) => {
           <Box mt="21px !important">
             <SocialMedia />
           </Box>
+          <VStack width="100%" spacing="16px" px="20px">
+            {linkObjectArray.links?.length > 0 &&
+              linkObjectArray.links?.map((linkObject, index) => (
+                <Button
+                  as={Link}
+                  height="56px"
+                  borderRadius="100px"
+                  bg="#242429"
+                  href={linkObject.link}
+                  key={index}
+                  rightIcon={<ArrowUpSlantIcon />}
+                  width="100%"
+                  color="#fff"
+                  // target="_blank"
+                  _hover={{ textDecoration: "none" }}
+                  isExternal
+                >
+                  {linkObject.title}
+                </Button>
+              ))}
+          </VStack>
         </VStack>
       </Box>
       <EditorButton marginTop="32px !important">Share Page Link</EditorButton>
