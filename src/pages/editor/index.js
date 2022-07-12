@@ -43,7 +43,7 @@ const Editor = () => {
             justify="space-between"
             px={{ base: "20px", lg: "24px" }}
             pb={{ md: "14px" }}
-            pt={{ base: "12px", lg: "unset" }}
+            pt="12px"
             align="center"
             mb={{ base: "26px", lg: "41px" }}
           >
