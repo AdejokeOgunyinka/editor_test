@@ -3,7 +3,7 @@ import { Box, Image, Flex, Text } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import "./drawerComponent.scss";
 
-const DrawerComponent = ({ icon, header, description }) => {
+const DrawerComponent = ({ icon, header, description, onClick }) => {
   return (
     <Flex
       width="100%"
@@ -14,6 +14,7 @@ const DrawerComponent = ({ icon, header, description }) => {
       align="center"
       justify="space-between"
       className="drawer_component"
+      onClick={onClick}
     >
       <Flex align="center">
         <Image alt="drawer image" src={icon} boxSize="20px" />

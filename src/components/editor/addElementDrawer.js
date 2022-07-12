@@ -5,14 +5,13 @@ import {
   DrawerCloseButton,
   DrawerHeader,
   DrawerBody,
-  DrawerFooter,
   DrawerContent,
-  Button,
   Input,
   InputGroup,
   InputLeftElement,
   Text,
   Flex,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { SearchIcon } from "../../assets/svgs";
 import DrawerComponent from "./drawerComponent";
@@ -20,10 +19,28 @@ import {
   addElementDrawerContents,
   mediaDrawerContents,
 } from "../../utils/drawerUtils";
+import AddLinksDrawer from "./addLinksDrawer";
 
 const AddElementDrawer = ({ onClose, isOpen }) => {
+  const {
+    isOpen: isOpenAddLinksDrawer,
+    onOpen: onOpenAddLinksDrawer,
+    onClose: onCloseAddLinksDrawer,
+  } = useDisclosure();
+
+  const handleOpenAddLinksDrawer = (index) => {
+    if (index === 0) {
+      onClose();
+      onOpenAddLinksDrawer();
+    }
+  };
+
   return (
     <>
+      <AddLinksDrawer
+        isOpen={isOpenAddLinksDrawer}
+        onClose={onCloseAddLinksDrawer}
+      />
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent
@@ -57,6 +74,7 @@ const AddElementDrawer = ({ onClose, isOpen }) => {
                   header={content.header}
                   description={content.description}
                   icon={content.icon}
+                  onClick={() => handleOpenAddLinksDrawer(index)}
                 />
               ))}
             </Flex>
@@ -75,13 +93,6 @@ const AddElementDrawer = ({ onClose, isOpen }) => {
               ))}
             </Flex>
           </DrawerBody>
-
-          <DrawerFooter>
-            <Button variant="outline" mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme="blue">Save</Button>
-          </DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>
