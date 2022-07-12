@@ -162,7 +162,8 @@ const Editor = () => {
           align="center"
           justify="center"
           pb="48px"
-          display={{ base: "none", lg: "inline" }}
+          display={{ base: "none", lg: "inline-flex" }}
+          width="100%"
         >
           <Flex {...controlStyles}>
             {controls.map((control, index) => (
