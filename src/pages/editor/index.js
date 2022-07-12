@@ -20,12 +20,11 @@ import { tags, controlStyles, controls } from "../../utils/editor";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../utils/routeUtils";
 import "./styles.scss";
-import AddLinkDrawer from "../../components/editor/addLinkDrawer";
+import AddElementDrawer from "../../components/editor/addElementDrawer";
 
 const Editor = () => {
   const history = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
-
   const handleControlClick = (index) => {
     if (index === 1) {
       history(ROUTES.customization);
@@ -36,7 +35,7 @@ const Editor = () => {
 
   return (
     <Flex width="100%" height="100%" boxSizing="border-box">
-      <AddLinkDrawer onClose={onClose} isOpen={isOpen} />
+      <AddElementDrawer onClose={onClose} isOpen={isOpen} />
       <Flex
         width={{ base: "100%", lg: "60%" }}
         boxSizing="border-box"
