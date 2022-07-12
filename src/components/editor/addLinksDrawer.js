@@ -48,7 +48,11 @@ const AddLinksDrawer = ({ onClose, isOpen }) => {
         >
           <DrawerCloseButton />
           <DrawerHeader>
-            <ArrowBackIcon onClick={() => onClose()} mr="14px" />
+            <ArrowBackIcon
+              onClick={() => onClose()}
+              mr="14px"
+              cursor="pointer"
+            />
             Add Links
           </DrawerHeader>
           <Formik
