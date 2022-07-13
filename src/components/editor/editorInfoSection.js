@@ -7,15 +7,13 @@ import {
   Avatar,
   Text,
   Heading,
-  Button,
-  Link,
 } from "@chakra-ui/react";
 import HotAirBalloon from "../../assets/Hot_air_balloon.png";
 import AvatarImage from "../../assets/avatar.png";
 import SocialMedia from "./socialMedia";
 import EditorButton from "./button";
 import { LinkDrawerContext } from "../../contexts/linkDrawer";
-import { ArrowUpSlantIcon } from "../../assets/svgs";
+import LinkExternalButton from "./linkExternalButton";
 
 const EditorInfoSection = (props) => {
   const { linkObjectArray } = useContext(LinkDrawerContext);
@@ -68,21 +66,11 @@ const EditorInfoSection = (props) => {
           <VStack width="100%" spacing="16px" px="20px">
             {linkObjectArray.links?.length > 0 &&
               linkObjectArray.links?.map((linkObject, index) => (
-                <Button
-                  as={Link}
-                  height="56px"
-                  borderRadius="100px"
-                  bg="#242429"
-                  href={linkObject.link}
+                <LinkExternalButton
+                  text={linkObject.title}
+                  link={linkObject.link}
                   key={index}
-                  rightIcon={<ArrowUpSlantIcon />}
-                  width="100%"
-                  color="#fff"
-                  _hover={{ textDecoration: "none" }}
-                  isExternal
-                >
-                  {linkObject.title}
-                </Button>
+                />
               ))}
           </VStack>
         </VStack>
