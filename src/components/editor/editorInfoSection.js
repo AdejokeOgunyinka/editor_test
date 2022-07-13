@@ -38,7 +38,7 @@ const EditorInfoSection = (props) => {
         height="85%"
         borderRadius="24px"
       >
-        <VStack textAlign="center" overflowY="scroll">
+        <VStack textAlign="center" overflowY="scroll" height="100%">
           <Flex direction="column" alignItems="center" position="relative">
             <Image
               alt="hot air balloon"
