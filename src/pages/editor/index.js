@@ -25,6 +25,7 @@ import AddElementDrawer from "../../components/editor/addElementDrawer";
 const Editor = () => {
   const history = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   const handleControlClick = (index) => {
     if (index === 1) {
       history(ROUTES.customization);

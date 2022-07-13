@@ -78,7 +78,6 @@ const EditorInfoSection = (props) => {
                   rightIcon={<ArrowUpSlantIcon />}
                   width="100%"
                   color="#fff"
-                  // target="_blank"
                   _hover={{ textDecoration: "none" }}
                   isExternal
                 >

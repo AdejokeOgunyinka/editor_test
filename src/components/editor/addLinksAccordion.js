@@ -20,6 +20,7 @@ const AddLinksAccordion = ({
   handleChange,
   setFieldTouched,
   removeLink,
+  values,
 }) => {
   const ErrorMessage = ({ name }) => (
     <Field name={name}>
@@ -70,6 +71,7 @@ const AddLinksAccordion = ({
           name={`links.${index}.title`}
           onChange={handleChange}
           onBlur={() => setFieldTouched(`links.${index}.title`)}
+          value={values.links[index].title}
         />
         <ErrorMessage name={`links.${index}.title`} />
 
@@ -83,6 +85,7 @@ const AddLinksAccordion = ({
           name={`links.${index}.link`}
           onChange={handleChange}
           onBlur={() => setFieldTouched(`links.${index}.link`)}
+          value={values.links[index].link}
         />
         <ErrorMessage name={`links.${index}.link`} />
       </AccordionPanel>

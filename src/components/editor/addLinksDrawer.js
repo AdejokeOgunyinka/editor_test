@@ -90,6 +90,7 @@ const AddLinksDrawer = ({ onClose, isOpen }) => {
                                 setFieldTouched={setFieldTouched}
                                 removeLink={values.links.length > 1 && remove}
                                 key={index}
+                                values={values}
                               />
                             ))}
                         </Accordion>
