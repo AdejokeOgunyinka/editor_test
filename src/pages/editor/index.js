@@ -55,14 +55,18 @@ const Editor = () => {
         justify="space-between"
         height={{ base: "90vh", lg: "unset" }}
       >
-        <Box>
+        <Box bg="#fff">
           <Flex
             justify="space-between"
             px={{ base: "20px", lg: "24px" }}
             pb={{ md: "14px" }}
-            pt="12px"
+            pt="15px"
             align="center"
             mb={{ base: "26px", lg: "41px" }}
+            position="sticky"
+            zIndex={1}
+            top="0px"
+            bg="#fff"
           >
             <Flex align="center">
               <Avatar alt="avatar" src={AvatarImage} boxSize="32px" />
@@ -226,6 +230,7 @@ const Editor = () => {
           display={{ base: "none", lg: "inline-flex" }}
           width="100%"
           position="sticky"
+          bottom="48px"
         >
           <Flex {...controlStyles}>
             {controls.map((control, index) => (

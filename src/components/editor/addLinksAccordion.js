@@ -53,7 +53,7 @@ const AddLinksAccordion = ({
               <Image
                 alt="remove link"
                 src={TrashIcon}
-                onClick={() => removeLink()}
+                onClick={() => removeLink(index)}
               />
             )}
           </Flex>
