@@ -17,6 +17,7 @@ import LinkExternalButton from "./linkExternalButton";
 
 const EditorInfoSection = (props) => {
   const { linkObjectArray } = useContext(LinkDrawerContext);
+  console.log({ linkObjectArray });
 
   return (
     <Flex
@@ -64,8 +65,8 @@ const EditorInfoSection = (props) => {
             <SocialMedia />
           </Box>
           <VStack width="100%" spacing="16px" px="20px">
-            {linkObjectArray.links?.length > 0 &&
-              linkObjectArray.links?.map((linkObject, index) => (
+            {linkObjectArray?.length > 0 &&
+              linkObjectArray?.map((linkObject, index) => (
                 <LinkExternalButton
                   text={linkObject.title}
                   link={linkObject.link}

@@ -32,10 +32,10 @@ const AddLinksDrawer = ({ onClose, isOpen }) => {
       .required(),
   });
 
-  const { setLinkObjectArray } = useContext(LinkDrawerContext);
+  const { setLinkObjectArray, linkObjectArray } = useContext(LinkDrawerContext);
 
   const onSubmit = (values) => {
-    setLinkObjectArray(values);
+    setLinkObjectArray([...linkObjectArray, ...values.links]);
     onClose();
   };
 

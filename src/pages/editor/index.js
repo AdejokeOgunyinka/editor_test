@@ -181,7 +181,7 @@ const Editor = () => {
           </Box>
 
           {/* Links on the editor main page */}
-          {linkObjectArray.links?.length > 0 && (
+          {linkObjectArray?.length > 0 && (
             <Box px={{ base: "20px", lg: "60px" }}>
               <Accordion
                 allowToggle
@@ -208,7 +208,7 @@ const Editor = () => {
                     </Flex>
                   </AccordionButton>
                   <AccordionPanel px="unset !important" pt="32px !important">
-                    {linkObjectArray.links?.map((link, index) => (
+                    {linkObjectArray?.map((link, index) => (
                       <Box width="100%" mb="20px">
                         <LinkExternalButton
                           text={link.title}
